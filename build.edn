@@ -1,0 +1,15 @@
+{:lib com.xadecimal/fpipes
+ :version "1.0.0"
+ :description "Functional pipe operators inspired by the F# and OCaml |> pipe operator."
+ :licenses [{:name "MIT License"
+             :url "https://github.com/xadecimal/fpipes/blob/main/LICENSE"}]
+ :documents [{:file "README.md"
+              :match ":deps \\{com\\.xadecimal\\/fpipes"
+              :action :replace
+              :keep-indent? true
+              :text "{:deps {com.xadecimal/fpipes {:mvn/version \"{{version}}\"}}}"}
+             {:file "README.md"
+              :match "\\[com\\.xadecimal\\/fpipes"
+              :action :replace
+              :keep-indent? true
+              :text "[com.xadecimal/fpipes \"{{version}}\"]"}]}
