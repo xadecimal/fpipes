@@ -94,6 +94,15 @@ For |_ you can pick multiple places to pipe into:
 |> IO.puts
 ```
 
+## Require
+
+I suggest you refer to all three pipes, and you also need to refer to `_` in order to use `|_`. In theory, it'll work without when inline, but when used as a function you'll have to have required `_` for it to work.
+
+```
+(ns your-ns
+  (:require [com.xadecimal.fpipes :refer [|> |< |_ _]]))
+```
+
 ## How it works?
 
 `|>`, `|<`, and `|_` are functions of the form: `(fn [x f & more] (f more... x))`. As you can see, they take a data/coll `x` as their first argument and a function as the second argument with possibly more argument, and will call that function with `x` as the last argument, or the first or where `_` shows up depending which one you use.
